@@ -1,0 +1,20 @@
+﻿@model IEnumerable<string>
+
+<ul class="treeview-menu">
+    <li>@Html.ActionLink("전체", "Index", "Product")</li>
+
+    @foreach (var link in Model)
+    {
+        <li>
+            @Html.RouteLink(link, new
+            {
+                controller = "Product",
+                action = "Index",
+                category = link,
+                page = 1
+            })
+        </li>
+    }
+</ul>
+
+

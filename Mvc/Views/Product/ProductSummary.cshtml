@@ -1,0 +1,17 @@
+﻿@model Mvc.Models.Product
+
+<div class="well">
+    <h3>
+        <strong>@Model.Name - @Model.Category</strong>
+        <span class="pull-right label label-primary">@Model.Price.ToString("c")</span>
+    </h3>
+    @using (Html.BeginForm("AddToCart", "Cart"))
+    {
+        <div class="pull-right">
+            @Html.Hidden("productID", Model.ProductID)
+            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+            <input type="submit" value="Add To Cart" class="btn btn-success" />
+        </div>
+    }
+    <span class="lead">@Model.Description &nbsp;</span>
+</div>

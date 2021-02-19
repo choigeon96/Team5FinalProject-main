@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A64E692-CECB-4717-B5A7-EAEBB08EDF27}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>POP</RootNamespace>
+    <AssemblyName>POP</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AsyncSocket\AsyncSocket.cs" />
+    <Compile Include="AsyncSocket\AsyncSocketClient.cs" />
+    <Compile Include="AsyncSocket\AsyncSocketServer.cs" />
+    <Compile Include="Base\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contacts.cs" />
+    <Compile Include="CustomControl\CustomTabControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControl\CustomTabControl.Designer.cs">
+      <DependentUpon>CustomTabControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\GradianPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\GradianPanel.Designer.cs">
+      <DependentUpon>GradianPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\PlaceHolderTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\PlaceHolderTextBox.Designer.cs">
+      <DependentUpon>PlaceHolderTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\TitleBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControl\TitleBar.designer.cs">
+      <DependentUpon>TitleBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\ucTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControl\ucTabControl.Designer.cs">
+      <DependentUpon>ucTabControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControl\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAction.Designer.cs">
+      <DependentUpon>FrmAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogViewer.designer.cs">
+      <DependentUpon>frmLogViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain2.Designer.cs">
+      <DependentUpon>FrmMain2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPerformance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPerformance.Designer.cs">
+      <DependentUpon>FrmPerformance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInspection.Designer.cs">
+      <DependentUpon>FrmInspection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\MachineControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControl\MachineControl.Designer.cs">
+      <DependentUpon>MachineControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPOPpopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPOPpopup.Designer.cs">
+      <DependentUpon>FrmPOPpopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoggingUtility.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TaskControl.designer.cs">
+      <DependentUpon>TaskControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaskListSection.cs" />
+    <Compile Include="TcpControl.cs" />
+    <Compile Include="ThreadPLCTask.cs" />
+    <EmbeddedResource Include="Base\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControl\CustomTabControl.resx">
+      <DependentUpon>CustomTabControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControl\TitleBar.resx">
+      <DependentUpon>TitleBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControl\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAction.resx">
+      <DependentUpon>FrmAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInspection.resx">
+      <DependentUpon>FrmInspection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogViewer.resx">
+      <DependentUpon>frmLogViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain2.resx">
+      <DependentUpon>FrmMain2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPerformance.resx">
+      <DependentUpon>FrmPerformance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControl\MachineControl.resx">
+      <DependentUpon>MachineControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPOPpopup.resx">
+      <DependentUpon>FrmPOPpopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TaskControl.resx">
+      <DependentUpon>TaskControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="PLCTask_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CompanyManager\CompanyManager.csproj">
+      <Project>{33e851fe-730b-41fe-b9c0-0dd812ee1c77}</Project>
+      <Name>CompanyManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAC\DAC.csproj">
+      <Project>{ef3f8919-8c06-43da-be2a-6aeac789b627}</Project>
+      <Name>DAC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Machine\Machine.csproj">
+      <Project>{6c7ced4e-6e61-4493-8a47-b25ffba7bfd6}</Project>
+      <Name>Machine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{76f4e6aa-7d41-48c6-9a87-0ae14cbc63e4}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{7DA0A26D-E5F3-4DED-8576-5DB25140485C}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VO\VO.csproj">
+      <Project>{166e3b03-0bd1-4cbb-8752-a446fd88f296}</Project>
+      <Name>VO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zoom_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Find_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\team5_Logo 수정.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\외주 작업장.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LEGS_홀 가공.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SEA_T가공.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leg_조립반.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\최종조립반.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fastforward.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fastreverse.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forward.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO_T.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_16x16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

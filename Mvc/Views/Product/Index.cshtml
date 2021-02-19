@@ -1,0 +1,35 @@
+﻿@model Mvc.Models.ProductListViewModel
+@using Mvc.Html
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            상품목록
+            <small>노트북 목록</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+            <li class="active">Here</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+        @foreach (var p in Model.Products)
+        {
+            @Html.Partial("ProductSummary", p)
+        }
+
+        <div class="btn-group pull-right">
+            @Html.PageLinks(Model.PagingInfo, x => Url.Action("Index", new { category = Model.CurrentCategory, page = x }))
+        </div>
+
+    </section>
+    <!-- /.content -->
+</div>
+
